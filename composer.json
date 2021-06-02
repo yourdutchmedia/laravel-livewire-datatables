@@ -1,0 +1,35 @@
+{
+  "name": "yourdutchmedia/laravel-livewire-datatables",
+  "description": "A dynamic data table component for Laravel Livewire",
+  "keywords": [
+    "laravel",
+    "livewire"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": "^7.3|^8.0"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Ydm\\Datatables\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ydm\\Datatables\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
