@@ -7,7 +7,7 @@ trait WithPerPagePagination
     public $showPagination = true;
     public $showPerPage = true;
     public $paginationEnabled = true;
-    public $perPage = 10;
+    public $perPage = 25;
     public $perPageAll = false;
     public $perPageAccepted = [10, 25, 50, 100];
 
