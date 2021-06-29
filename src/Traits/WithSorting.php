@@ -4,6 +4,8 @@ namespace Ydm\Datatables\Traits;
 
 trait WithSorting
 {
+    public $defaultSortColumn = null;
+    public $defaultSortDirection = null;
     public $singleColumnSorting = false;
     public $showSorting = true;
     public $sortNames = [];
@@ -12,6 +14,10 @@ trait WithSorting
 
     public function applySorting($query)
     {
+        if (! empty($this->defaultSortColumn) && ! count($this->sorts)) {
+            return $query->orderBy($this->defaultSortColumn, $this->defaultSortDirection);
+        }
+
         foreach ($this->sorts as $field => $direction) {
             if (optional($this->getColumn($field))->hasSortCallback()) {
                 $query = app()->call($this->getColumn($field)->getSortCallback(), ['query' => $query, 'direction' => $direction]);
